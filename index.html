@@ -4,16 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FizzBuzz</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .output {
+            background-color: lightgray;
+            padding: 50px;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            margin-bottom: 20px;
+            width: 100px;
+            border: 3px solid rgba(255, 166, 0, 0.836);
+            border-radius: 5px;
+        }
+
+        .result, .counting {
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 7px;
+            background-color: rgba(255, 166, 0, 0.836);
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+    </style>
     
 </head>
 <body>
-    <!-- Step 2 -->
+    <!-- Step 3 -->
     <div class="output">
+
+        <h1>FizzBuzz</h1>
+
+        <label for="firstNum">Min</label>
+        <input type="number" id="firstNum" value="1">
+
+        <label for="lastNum">Max</label>
+        <input type="number" id="lastNum" value="">
+
+        <button onclick="fizzBuzz()">Generate</button>
+
         <div class="result" id="result"></div>
         <div class="counting" id="counting"></div>
     </div>
+
     <script>
-        function fizzBuzz(firstNum, lastNum) {
+        function fizzBuzz() {
+            let firstNum = Number(document.getElementById('firstNum').value);
+            let lastNum = Number(document.getElementById('lastNum').value);
+
             let answer = '';
             let howManyFizz = 0;
             let howManyBuzz = 0;
@@ -38,11 +92,10 @@
                     howManyNumber++;
                 }
             }
-            document.getElementById('result').innerText = answer.trim();
-            document.getElementById('counting').innerText = `fizz: ${howManyFizz}; buzz: ${howManyBuzz}; fizzBuzz: ${howManyFizzBuzz}; number: ${howManyNumber}`;
+            document.getElementById('result').innerText = `Result: ${answer.trim()}`;
+            
+            document.getElementById('counting').innerText = `Counting: fizz: ${howManyFizz}; buzz: ${howManyBuzz}; fizzBuzz: ${howManyFizzBuzz}; number: ${howManyNumber}`;
         }
-
-        fizzBuzz(1, 20);
         
     </script>
 </body>
