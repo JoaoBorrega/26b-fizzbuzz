@@ -7,28 +7,39 @@
     
 </head>
 <body>
-    <!-- Step 1 -->
+    <!-- Step 2 -->
     <div class="output">
         <div class="result" id="result"></div>
+        <div class="counting" id="counting"></div>
     </div>
     <script>
         function fizzBuzz(firstNum, lastNum) {
             let answer = '';
+            let howManyFizz = 0;
+            let howManyBuzz = 0;
+            let howManyFizzBuzz = 0;
+            let howManyNumber = 0;
+
             for (let i = firstNum; i <= lastNum; i++) {
                 if(i % 15 === 0) {
                     answer += ' fizzbuzz ';
+                    howManyFizzBuzz++;
                 }
                 else if(i % 3 === 0) {
                     answer += ' fizz ';
+                    howManyFizz++;
                 }
                 else if(i % 5 === 0) {
                     answer += ' buzz ';
+                    howManyBuzz++;
                 }
                 else {
                     answer += i + ' ';
+                    howManyNumber++;
                 }
             }
             document.getElementById('result').innerText = answer.trim();
+            document.getElementById('counting').innerText = `fizz: ${howManyFizz}; buzz: ${howManyBuzz}; fizzBuzz: ${howManyFizzBuzz}; number: ${howManyNumber}`;
         }
 
         fizzBuzz(1, 20);

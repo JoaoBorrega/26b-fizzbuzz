@@ -21,3 +21,15 @@ Being careful to avoid trailing spaces.
 e.g. Running the program with a range from 1-20 should produce the following result:
 1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 fizz 19 buzz
 This code should be in branch step-1.
+
+Step 2
+Please enhance your existing solution to perform the following:
+Produce a report at the end of the output showing how many times the following were printed:
+fizz
+buzz
+fizzbuzz
+an integer
+e.g. Running the program with a range from 1-20 should produce the following result:
+1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 fizz 19 buzz fizz: 5 buzz: 3 fizzbuzz: 1 integer: 11
+(Integer is 11 because there were 11 numbers that were not altered).
+This code should be in branch step-2.
